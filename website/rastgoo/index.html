@@ -20,11 +20,37 @@ footer{padding:40px 0 24px;border-top:1px solid var(--line);background:#070807}.
 .shade{position:fixed;inset:0;background:#0009;z-index:70;opacity:0;visibility:hidden;transition:.3s}.shade.open{opacity:1;visibility:visible}.drawer{position:fixed;top:0;bottom:0;left:0;width:min(420px,92vw);background:#11130f;border-right:1px solid var(--line);z-index:80;transform:translateX(-105%);transition:.35s;display:flex;flex-direction:column}.drawer.open{transform:translateX(0)}.drawer-head,.drawer-foot{padding:21px;border-bottom:1px solid var(--line)}.drawer-head{display:flex;justify-content:space-between;align-items:center}.drawer-head h3{margin:0}.close{background:none;border:0;color:var(--pale);font-size:26px}.items{padding:15px 21px;overflow:auto;flex:1}.empty{text-align:center;padding:65px 10px;color:var(--muted);line-height:2}.cart-item{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #ffffff18}.cart-item small{display:block;color:var(--pale);margin-top:5px}.qty{display:flex;align-items:center;gap:8px}.qty button{width:26px;height:26px;background:#ffffff12;border:1px solid #ffffff25;color:white}.total{display:flex;justify-content:space-between;margin-bottom:14px}.drawer-foot .btn{width:100%}
 @media(max-width:850px){.links{display:none;position:absolute;top:70px;right:18px;left:18px;background:#10120ff5;border:1px solid var(--line);padding:20px;flex-direction:column}.links.show{display:flex}.hamb{display:block}.actions>.btn{display:none}.story,.booking,.reviews{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.hero{min-height:730px}.story-img{max-width:570px}}@media(max-width:570px){section{padding:75px 0}.wrap{width:calc(100% - 30px)}.hero{min-height:750px}.hero h1{font-size:52px}.hero p{font-size:14px}.stats{gap:16px}.stats strong{font-size:19px}.head{display:block}.head p{margin-top:13px}.grid,.features{grid-template-columns:1fr}.dish .photo{height:225px}.story{gap:40px}.story-img{height:330px;margin-left:12px}.booking h2{font-size:30px}.form{grid-template-columns:1fr}.field.full,.form button{grid-column:auto}.foot{display:block}.foot .brand{margin-bottom:18px}.map{height:300px}}
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<style>
+/* ERYNDEX premium interaction layer */
+.hero{isolation:isolate}.hero:before{z-index:-2}.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 24% 52%,#d6a75c18,transparent 40%),linear-gradient(90deg,#08090730,#080907b9 66%,#080907)}
+#coffee-scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.92}
+.hero .wrap{position:relative;z-index:2;pointer-events:none}.hero-copy{pointer-events:auto}
+.nav{gap:15px}.lang-switch{background:#ffffff08;border:1px solid var(--line);color:var(--pale);padding:9px 12px;font-size:11px}
+.detail-btn{border:1px solid #ffffff30;background:#ffffff08;color:#eee4d3;padding:8px 10px;font-size:11px;margin-inline-start:6px}
+.product-modal,.checkout-modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:#000b;padding:18px;backdrop-filter:blur(9px)}
+.product-modal.open,.checkout-modal.open{display:grid}
+.modal-card{width:min(760px,100%);max-height:90vh;overflow:auto;background:#141610;border:1px solid var(--line);box-shadow:0 25px 90px #000b;display:grid;grid-template-columns: .9fr 1.1fr}
+.modal-photo{min-height:360px}.modal-photo img{width:100%;height:100%;object-fit:cover}
+.modal-content{padding:25px}.modal-content h3{font-size:25px;margin:8px 0}.modal-content p{color:var(--muted);line-height:2;font-size:13px}
+.modal-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.modal-options label,.checkout-form label{font-size:11px;color:#cfc5b4;display:grid;gap:6px}
+.modal-options select,.checkout-form input,.checkout-form textarea,.checkout-form select{background:#090a08;color:#f5f0e7;border:1px solid var(--line);padding:11px;width:100%;min-width:0}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap}.modal-close{float:left;background:none;color:var(--pale);border:0;font-size:25px}
+.checkout-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:24px}.checkout-form .full{grid-column:1/-1}
+.checkout-form .btn{grid-column:1/-1;justify-content:center}
+.cart-item{gap:12px}.cart-item .qty{flex-shrink:0}
+.cart-summary-note{font-size:11px;color:var(--muted);line-height:1.8;margin:8px 0}
+@media(max-width:680px){.modal-card{grid-template-columns:1fr}.modal-photo{height:190px;min-height:190px}.modal-content{padding:18px}.modal-options,.checkout-form{grid-template-columns:1fr}.checkout-form .full{grid-column:auto}#coffee-scene{opacity:.5}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
-<header id="top"><div class="wrap nav"><a class="brand" href="#home"><div class="brandmark"><span>ر</span></div><div><b>کافه راستگو</b><small>RASTGOO COFFEE HOUSE</small></div></a><nav class="links" id="links"><a href="#story">داستان ما</a><a href="#menu">منو</a><a href="#experience">تجربه راستگو</a><a href="#booking">رزرو میز</a><a href="#contact">تماس و مسیر</a></nav><div class="actions"><button class="cart-open" id="openCart">سبد سفارش <span class="count" id="count">۰</span></button><a class="btn" href="#booking">رزرو میز</a><button class="hamb" id="hamb">☰</button></div></div></header>
+<header id="top"><div class="wrap nav"><a class="brand" href="#home"><div class="brandmark"><span>ر</span></div><div><b>کافه راستگو</b><small>RASTGOO COFFEE HOUSE</small></div></a><nav class="links" id="links"><a href="#story">داستان ما</a><a href="#menu">منو</a><a href="#experience">تجربه راستگو</a><a href="#booking">رزرو میز</a><a href="#contact">تماس و مسیر</a></nav><div class="actions"><button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button><button class="cart-open" id="openCart">سبد سفارش <span class="count" id="count">۰</span></button><a class="btn" href="#booking">رزرو میز</a><button class="hamb" id="hamb">☰</button></div></div></header>
 <main>
-<section class="hero" id="home"><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
+<section class="hero" id="home"><canvas id="coffee-scene" aria-hidden="true"></canvas><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
 <section id="story"><div class="wrap story"><div class="story-img" data-aos="fade-left"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1000&q=85" alt="آماده‌سازی قهوه"></div><div data-aos="fade-right"><span class="eyebrow">نگاه راستگو به قهوه</span><h2>برای آن‌هایی که<br><span class="gold">طعم را جدی می‌گیرند.</span></h2><p>از انتخاب دانه تا آخرین قطره در فنجان، جزئیات اهمیت دارند. باریستاهای حرفه‌ای و توجه به کیفیت قهوه، تجربه‌ای می‌سازند که در کنار فضایی تاریک، آرام و صمیمی، برای گفت‌وگوهای طولانی و لحظه‌های شخصی ایده‌آل است.</p><div class="pillars"><div class="ico">✦</div><div><b>قهوه با دقت و شخصیت</b><small>تمرکز بر کیفیت، عصاره‌گیری و تعادل طعم</small></div></div><div class="pillars"><div class="ico">◈</div><div><b>فضایی برای مکث</b><small>محیطی دنج با حریم مناسب گفت‌وگو</small></div></div></div></div></section>
 <section class="menu-area" id="menu"><div class="wrap">
 <div class="head"><div><span class="eyebrow">منوی کافه راستگو</span><h2>لحظه‌ات را <span class="gold">انتخاب کن.</span></h2></div>
@@ -45,62 +71,166 @@ footer{padding:40px 0 24px;border-top:1px solid var(--line);background:#070807}.
 </main>
 <footer><div class="wrap"><div class="foot"><a class="brand" href="#home"><div class="brandmark"><span>ر</span></div><div><b>کافه راستگو</b><small>RASTGOO COFFEE HOUSE</small></div></a><span style="color:var(--muted);font-size:12px">قهوه‌ای برای مکث؛ فضایی برای باهم بودن.</span><a class="btn ghost" href="tel:+982188926055">تماس با کافه</a></div><div class="credit">DESIGNED &amp; ENGINEERED BY ERYNDEX</div></div></footer>
 <div class="badge">✦ DESIGNED &amp; ENGINEERED BY ERYNDEX</div>
+
+<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-label="جزئیات محصول"><div class="modal-card"><div class="modal-photo"><img id="modalImage" alt=""></div><div class="modal-content"><button class="modal-close" id="modalClose" aria-label="بستن">×</button><span class="eyebrow">RASTGOO SIGNATURE MENU</span><h3 id="modalName"></h3><small id="modalEnglish" class="english"></small><p id="modalDescription"></p><div class="modal-options"><label>سایز / تعداد شات<select id="modalVariant"></select></label><label>نوع شیر<select id="modalMilk"><option value="معمولی">شیر معمولی</option><option value="جو دوسر">شیر جو دوسر</option><option value="بادام">شیر بادام</option><option value="سویا">شیر سویا</option></select></label><label>دما<select id="modalTemp"><option>گرم</option><option>سرد</option></select></label><label>طعم‌دهنده<select id="modalSyrup"><option>بدون طعم‌دهنده</option><option>وانیل</option><option>کارامل</option><option>فندق</option></select></label></div><div class="cart-summary-note">قیمت و اطلاعات تغذیه‌ای این محصول هنوز توسط کافه تأیید نشده است؛ این گزینه‌ها فقط برای نمایش تجربه سفارشی‌سازی هستند.</div><div class="modal-actions"><button class="btn" id="modalAdd">افزودن به انتخاب‌ها</button><button class="btn ghost" id="modalCancel">بستن</button></div></div></div></div>
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="تکمیل سفارش"><div class="modal-card" style="display:block;max-width:620px"><div class="modal-content"><button class="modal-close" id="checkoutClose">×</button><span class="eyebrow">DEMO CHECKOUT</span><h3>تکمیل اطلاعات سفارش</h3><p>این نسخه نمایشی است. هیچ سفارش یا پرداخت واقعی ثبت نمی‌شود.</p></div><form class="checkout-form" id="checkoutForm"><label>نام و نام خانوادگی<input name="customer" required></label><label>شماره موبایل<input name="mobile" required inputmode="tel" pattern="[0-9۰-۹+ -]{8,}"></label><label>روش دریافت<select name="method" id="orderMethod"><option value="pickup">تحویل حضوری</option><option value="delivery">ارسال</option><option value="dinein">صرف در کافه</option></select></label><label>کد تخفیف (نمایشی)<input name="discount" placeholder="در صورت داشتن کد"></label><label class="full" id="addressField" style="display:none">آدرس تحویل<textarea name="address" rows="2"></textarea></label><label class="full">یادداشت سفارش<textarea name="notes" rows="2"></textarea></label><div class="full cart-summary-note" id="checkoutSummary">قیمت نهایی پس از اعلام منوی تأییدشده مشخص می‌شود.</div><button class="btn" type="submit">تأیید اطلاعات نمایشی</button></form></div></div>
 <div class="shade" id="shade"></div><aside class="drawer" id="drawer"><div class="drawer-head"><h3>سبد سفارش شما</h3><button class="close" id="close">×</button></div><div class="items" id="items"><div class="empty">سبد شما هنوز خالی است.<br><span class="gold">از منو انتخاب کنید.</span></div></div><div class="drawer-foot"><div class="total"><b>مبلغ کل</b><strong id="total">۰ تومان</strong></div><button class="btn" id="checkout">ادامه و ثبت سفارش</button><small style="display:block;text-align:center;color:var(--muted);margin-top:9px;font-size:10px">پرداخت آنلاین در این نسخه فعال نیست.</small></div></aside>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 <script>
-/* Product catalog: prices, recipes and calories remain unpublished until Rastgoo confirms them. */
+/* RASTGOO DEMO — all prices/calories remain null until confirmed by the café. */
 const menuItems = [
-{id:'espresso',category:'espresso',name:'اسپرسو',en:'Espresso',tag:'کلاسیک و عمیق',desc:'عصاره قهوه با بادی متراکم و کرمای طبیعی؛ انتخابی خالص و متمرکز.',photo:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85',variants:[['تک‌شات',null,null],['جفت‌شات',null,null]]},
-{id:'macchiato',category:'espresso',name:'اسپرسو ماکیاتو',en:'Espresso Macchiato',tag:'اسپرسو و فوم شیر',desc:'اسپرسو با مقدار کمی شیر و فوم لطیف؛ تعادلی میان قدرت قهوه و نرمی شیر.',photo:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85',variants:[['تک‌شات',null,null],['جفت‌شات',null,null]]},
-{id:'con-panna',category:'espresso',name:'اسپرسو کان‌پانا',en:'Espresso Con Panna',tag:'با خامه',desc:'اسپرسوی غلیظ در کنار خامه؛ ترکیبی ساده با بافتی لطیف و غنی.',photo:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85',variants:[['تک‌شات',null,null],['جفت‌شات',null,null]]},
-{id:'affogato',category:'espresso',name:'اسپرسو آفوگاتو',en:'Espresso Affogato',tag:'قهوه و بستنی',desc:'اسپرسوی داغ در کنار یک اسکوپ بستنی وانیلی؛ تضاد دلنشین گرم و سرد.',photo:'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85',variants:[['تک‌شات',null,null],['جفت‌شات',null,null]]},
-{id:'daily-brew',category:'brew',name:'قهوه دمی',en:'Daily Brew',tag:'دم‌آوری روز',desc:'قهوه دمی روز؛ برای لذت بردن از عطر و ویژگی‌های دانه در فنجان.',photo:'https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'americano',category:'espresso',name:'آمریکانو',en:'Americano',tag:'شفاف و متعادل',desc:'اسپرسو و آب داغ؛ طعمی شفاف با عطر قهوه و شدت قابل انتخاب.',photo:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'latte',category:'milk',name:'کافه لاته',en:'Latte',tag:'نرم و مخملی',desc:'اسپرسو و شیر بخار داده‌شده با لایه‌ای کم از فوم شیر.',photo:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'cappuccino',category:'milk',name:'کاپوچینو',en:'Cappuccino',tag:'فوم شیر بیشتر',desc:'ترکیب اسپرسو و شیر بخار داده‌شده با فوم حجیم و لطیف.',photo:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'caramel-macchiato',category:'milk',name:'کارامل ماکیاتو',en:'Caramel Macchiato',tag:'وانیل و کارامل',desc:'اسپرسو، وانیل، شیر و فوم شیر با سس کارامل؛ ترکیبی شیرین و خوش‌عطر.',photo:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'cortado',category:'milk',name:'کورتادو',en:'Cortado',tag:'تعادل قهوه و شیر',desc:'اسپرسو و مقدار متناسبی شیر با فوم کم؛ با امکان انتخاب طعم‌دهنده پس از تأیید کافه.',photo:'https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85',variants:[['متوسط',null,null]]},
-{id:'mocha',category:'milk',name:'کافه موکا',en:'Mocha',tag:'قهوه و شکلات',desc:'ترکیب اسپرسو، شکلات و شیر با فوم کم؛ مناسب دوست‌داران طعم شکلات.',photo:'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'hot-chocolate',category:'milk',name:'شکلات گرم',en:'Hot Chocolate',tag:'گرم و شکلاتی',desc:'نوشیدنی شکلاتی گرم با شیر و رایحه کاکائو.',photo:'https://images.unsplash.com/photo-1542990253-0b8be4edb7b9?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'masala',category:'milk',name:'ماسالا',en:'Masala',tag:'ادویه‌های معطر',desc:'ترکیب ادویه‌های گرم مانند زنجبیل، دارچین و میخک با شیر؛ دستور نهایی با کافه هماهنگ می‌شود.',photo:'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'steamed-milk',category:'milk',name:'شیر گرم',en:'Steamed Milk',tag:'ساده و لطیف',desc:'شیر بخار داده‌شده با فوم کم؛ نوشیدنی‌ای ساده و آرام.',photo:'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85',variants:[['کوچک',null,null],['متوسط',null,null],['بزرگ',null,null]]},
-{id:'persian-latte',category:'milk',name:'پرشین لاته',en:'Persian Latte',tag:'ترکیب ایرانی',desc:'ترکیبی الهام‌گرفته از کره پسته، زعفران، گلاب و شیر گرم؛ دستور اختصاصی نیازمند تأیید راستگو است.',photo:'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=900&q=85',variants:[['متوسط',null,null]]}
+{id:'espresso',category:'espresso',name:'اسپرسو',en:'Espresso',tag:'کلاسیک و عمیق',desc:'عصاره قهوه با بادی متراکم و کرمای طبیعی؛ انتخابی خالص و متمرکز.',photo:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85',variants:['تک‌شات','جفت‌شات']},
+{id:'macchiato',category:'espresso',name:'اسپرسو ماکیاتو',en:'Espresso Macchiato',tag:'اسپرسو و فوم شیر',desc:'اسپرسو با مقدار کمی شیر و فوم لطیف؛ تعادلی میان قدرت قهوه و نرمی شیر.',photo:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85',variants:['تک‌شات','جفت‌شات']},
+{id:'con-panna',category:'espresso',name:'اسپرسو کان‌پانا',en:'Espresso Con Panna',tag:'با خامه',desc:'اسپرسوی غلیظ در کنار خامه؛ ترکیبی ساده با بافتی لطیف و غنی.',photo:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85',variants:['تک‌شات','جفت‌شات']},
+{id:'affogato',category:'espresso',name:'اسپرسو آفوگاتو',en:'Espresso Affogato',tag:'قهوه و بستنی',desc:'اسپرسوی داغ در کنار یک اسکوپ بستنی وانیلی؛ تضاد دلنشین گرم و سرد.',photo:'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85',variants:['تک‌شات','جفت‌شات']},
+{id:'daily-brew',category:'brew',name:'قهوه دمی',en:'Daily Brew',tag:'دم‌آوری روز',desc:'قهوه دمی روز؛ برای لذت بردن از عطر و ویژگی‌های دانه در فنجان.',photo:'https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'americano',category:'espresso',name:'آمریکانو',en:'Americano',tag:'شفاف و متعادل',desc:'اسپرسو و آب داغ؛ طعمی شفاف با عطر قهوه و شدت قابل انتخاب.',photo:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'latte',category:'milk',name:'کافه لاته',en:'Latte',tag:'نرم و مخملی',desc:'اسپرسو و شیر بخار داده‌شده با لایه‌ای کم از فوم شیر.',photo:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'cappuccino',category:'milk',name:'کاپوچینو',en:'Cappuccino',tag:'فوم شیر بیشتر',desc:'ترکیب اسپرسو و شیر بخار داده‌شده با فوم حجیم و لطیف.',photo:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'caramel-macchiato',category:'milk',name:'کارامل ماکیاتو',en:'Caramel Macchiato',tag:'وانیل و کارامل',desc:'اسپرسو، وانیل، شیر و فوم شیر با سس کارامل؛ ترکیبی شیرین و خوش‌عطر.',photo:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'cortado',category:'milk',name:'کورتادو',en:'Cortado',tag:'تعادل قهوه و شیر',desc:'اسپرسو و مقدار متناسبی شیر با فوم کم.',photo:'https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85',variants:['متوسط']},
+{id:'mocha',category:'milk',name:'کافه موکا',en:'Mocha',tag:'قهوه و شکلات',desc:'ترکیب اسپرسو، شکلات و شیر با فوم کم؛ مناسب دوست‌داران طعم شکلات.',photo:'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'hot-chocolate',category:'milk',name:'شکلات گرم',en:'Hot Chocolate',tag:'گرم و شکلاتی',desc:'نوشیدنی شکلاتی گرم با شیر و رایحه کاکائو.',photo:'https://images.unsplash.com/photo-1542990253-0b8be4edb7b9?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'masala',category:'milk',name:'ماسالا',en:'Masala',tag:'ادویه‌های معطر',desc:'ترکیب ادویه‌های گرم مانند زنجبیل، دارچین و میخک با شیر؛ دستور نهایی با کافه هماهنگ می‌شود.',photo:'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'steamed-milk',category:'milk',name:'شیر گرم',en:'Steamed Milk',tag:'ساده و لطیف',desc:'شیر بخار داده‌شده با فوم کم؛ نوشیدنی‌ای ساده و آرام.',photo:'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85',variants:['کوچک','متوسط','بزرگ']},
+{id:'persian-latte',category:'milk',name:'پرشین لاته',en:'Persian Latte',tag:'ترکیب ایرانی',desc:'ترکیبی الهام‌گرفته از کره پسته، زعفران، گلاب و شیر گرم؛ دستور اختصاصی نیازمند تأیید راستگو است.',photo:'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=900&q=85',variants:['متوسط']}
 ];
-const faNum=n=>new Intl.NumberFormat('fa-IR').format(n);
-const grid=document.querySelector('#grid');
+const $=s=>document.querySelector(s), faNum=n=>new Intl.NumberFormat('fa-IR').format(n);
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const grid=$('#grid');
 function renderMenu(filter='all'){
- grid.innerHTML=menuItems.filter(p=>filter==='all'||p.category===filter).map(p=>`<article class="dish" data-category="${p.category}">
- <div class="photo"><img src="${p.photo}" alt="${p.name}" loading="lazy" decoding="async"><span class="tag">${p.tag}</span></div>
- <div class="dish-body"><div class="dish-top"><div><h3>${p.name}</h3><span class="english">${p.en}</span></div><span class="price">قیمت به‌زودی</span></div>
- <p>${p.desc}</p><div class="variant-row"><div class="variant-control"><label for="variant-${p.id}">انتخاب سایز / شات</label><select id="variant-${p.id}" class="variant-select" data-id="${p.id}">${p.variants.map((v,i)=>`<option value="${i}">${v[0]}</option>`).join('')}</select></div><div class="variant-control"><label>اطلاعات تغذیه‌ای</label><div style="border:1px solid #d7ad6844;padding:9px 8px;color:#b9b2a5;font-size:10px">کالری پس از تأیید</div></div></div>
- <div class="variant-meta"><span>قیمت اختصاصی راستگو</span><strong>در انتظار اعلام</strong></div>
- <div class="dish-foot"><small>قابل سفارش پس از تأیید قیمت</small><button class="add" data-add="${p.id}">+ افزودن به سبد</button></div></div></article>`).join('');
+ grid.innerHTML=menuItems.filter(p=>filter==='all'||p.category===filter).map(p=>`<article class="dish" data-category="${p.category}" data-tilt data-tilt-glare data-tilt-max="5" data-tilt-speed="500">
+ <div class="photo"><img src="${p.photo}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"><span class="tag">${p.tag}</span></div>
+ <div class="dish-body"><div class="dish-top"><div><h3>${p.name}</h3><span class="english">${p.en}</span></div><span class="price">قیمت به‌زودی</span></div><p>${p.desc}</p>
+ <div class="variant-row"><div class="variant-control"><label for="variant-${p.id}">انتخاب سایز / شات</label><select id="variant-${p.id}" class="variant-select">${p.variants.map((v,i)=>`<option value="${i}">${v}</option>`).join('')}</select></div><div class="variant-control"><label>اطلاعات تغذیه‌ای</label><div style="border:1px solid #d7ad6844;padding:9px 8px;color:#b9b2a5;font-size:10px">کالری پس از تأیید</div></div></div>
+ <div class="variant-meta"><span>قیمت اختصاصی راستگو</span><strong>در انتظار اعلام</strong></div><div class="dish-foot"><small>پیش‌نمایش منو</small><div><button class="detail-btn" data-detail="${p.id}">جزئیات</button><button class="add" data-add="${p.id}">+ افزودن</button></div></div></div></article>`).join('');
+ if(window.VanillaTilt) VanillaTilt.init(grid.querySelectorAll('[data-tilt]'),{max:5,speed:500,glare:true,'max-glare':.16});
+ if(window.AOS)AOS.refresh();
 }
 renderMenu();
 document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderMenu(b.dataset.filter)});
-AOS.init({duration:850,once:true,offset:70});
-addEventListener('scroll',()=>document.querySelector('#top').classList.toggle('scrolled',scrollY>25));
-document.querySelector('#hamb').onclick=()=>document.querySelector('#links').classList.toggle('show');
-document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.querySelector('#links').classList.remove('show'));
+if(window.AOS)AOS.init({duration:850,once:true,offset:70});
+addEventListener('scroll',()=>$('#top').classList.toggle('scrolled',scrollY>25),{passive:true});
+$('#hamb').onclick=()=>$('#links').classList.toggle('show');
+document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('show'));
 let cart={};
-const fmt=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
+try{cart=JSON.parse(localStorage.getItem('rastgoo-cart-v2')||'{}')||{}}catch(e){cart={}}
+function persistCart(){try{localStorage.setItem('rastgoo-cart-v2',JSON.stringify(cart))}catch(e){}}
 function renderCart(){
  const arr=Object.values(cart),qty=arr.reduce((a,x)=>a+x.qty,0);
- document.querySelector('#count').textContent=faNum(qty);
- document.querySelector('#total').textContent='قیمت پس از اعلام منو';
- document.querySelector('#items').innerHTML=arr.length?arr.map(x=>`<div class="cart-item"><div><b>${x.name}</b><small>${x.variant} · قیمت پس از اعلام</small></div><div class="qty"><button data-q="-" data-id="${x.id}">−</button><b>${faNum(x.qty)}</b><button data-q="+" data-id="${x.id}">+</button></div></div>`).join(''):'<div class="empty">سبد شما هنوز خالی است.<br><span class="gold">از منو انتخاب کنید.</span></div>';
+ $('#count').textContent=faNum(qty);
+ $('#total').textContent='قیمت پس از اعلام منو';
+ $('#items').innerHTML=arr.length?arr.map(x=>`<div class="cart-item"><div><b>${escapeHtml(x.name)}</b><small>${escapeHtml(x.variant)} · ${escapeHtml(x.custom||'سفارشی‌سازی نشده')}</small></div><div class="qty"><button data-q="-" data-id="${escapeHtml(x.id)}" aria-label="کاهش تعداد">−</button><b>${faNum(x.qty)}</b><button data-q="+" data-id="${escapeHtml(x.id)}" aria-label="افزایش تعداد">+</button><button data-remove="${escapeHtml(x.id)}" aria-label="حذف" style="background:none;border:0;color:#d7ad68">×</button></div></div>`).join(''):'<div class="empty">سبد شما هنوز خالی است.<br><span class="gold">از منو انتخاب کنید.</span></div>';
+ persistCart();
 }
-function open(){document.querySelector('#drawer').classList.add('open');document.querySelector('#shade').classList.add('open')}
-function shut(){document.querySelector('#drawer').classList.remove('open');document.querySelector('#shade').classList.remove('open')}
-document.querySelector('#openCart').onclick=open;document.querySelector('#close').onclick=shut;document.querySelector('#shade').onclick=shut;
+function openCart(){$('#drawer').classList.add('open');$('#shade').classList.add('open')}
+function shutCart(){$('#drawer').classList.remove('open');$('#shade').classList.remove('open')}
+$('#openCart').onclick=openCart;$('#close').onclick=shutCart;$('#shade').onclick=shutCart;
+function addItem(p,variant,custom='') {
+ const key=[p.id,variant,custom].join('|');cart[key]??={id:key,name:p.name,variant,custom,qty:0};cart[key].qty++;renderCart();
+ if(window.Swal)Swal.fire({toast:true,position:'top',showConfirmButton:false,timer:1400,title:'به سبد انتخاب‌ها اضافه شد',background:'#171914',color:'#f5f0e7'});
+}
 grid.addEventListener('click',e=>{
+ const detail=e.target.closest('[data-detail]');
+ if(detail){showProduct(detail.dataset.detail);return}
  const b=e.target.closest('[data-add]');if(!b)return;
- const p=menuItems.find(x=>x.id===b.dataset.add),select=grid.querySelector('#variant-'+p.id),variant=p.variants[Number(select.value)][0],key=p.id+'-'+variant;
- cart[key]??={id:key,name:p.name,variant,qty:0};cart[key].qty++;renderCart();
- if(window.Swal)Swal.fire({toast:true,position:'top',showConfirmButton:false,timer:1300,title:'به سبد انتخاب‌ها اضافه شد',background:'#171914',color:'#f5f0e7'});
+ const p=menuItems.find(x=>x.id===b.dataset.add),variant=p.variants[Number($('#variant-'+p.id).value)];
+ addItem(p,variant);
 });
-document.querySelector('#items').onclick=e=>{const b=e.target.closest('button[data-q]');if(!b)return;const x=cart[b.dataset.id];x.qty+=b.dataset.q==='+'?1:-1;if(x.qty<1)delete cart[b.dataset.id];renderCart()};
-document.querySelector('#checkout').onclick=()=>Swal.fire({icon:'info',title:Object.keys(cart).length?'فهرست انتخاب‌های شما':'سبد خالی است',text:Object.keys(cart).length?'این نسخه برای انتخاب محصولات است. قیمت‌ها و ثبت سفارش پس از تأیید منوی راستگو فعال می‌شود.':'ابتدا یک محصول از منو انتخاب کنید.',background:'#171914',color:'#f5f0e7',confirmButtonColor:'#c99b52'});
-let d=new Date();document.querySelector('#date').min=new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
-document.querySelector('#bookingForm').onsubmit=e=>{e.preventDefault();if(!e.target.reportValidity())return;let name=new FormData(e.target).get('name');Swal.fire({icon:'success',title:'فرم با موفقیت تکمیل شد',html:name+' عزیز، این پیش‌نمایش آماده است. برای ثبت واقعی رزرو باید فرم به پنل یا سرویس پیام‌رسان کافه متصل شود.',background:'#171914',color:'#f5f0e7',confirmButtonColor:'#c99b52'});e.target.reset()};
+$('#items').onclick=e=>{
+ const b=e.target.closest('button');if(!b)return;const id=b.dataset.id;
+ if(b.dataset.remove){delete cart[b.dataset.remove]}
+ else if(b.dataset.q&&cart[id]){cart[id].qty+=b.dataset.q==='+'?1:-1;if(cart[id].qty<1)delete cart[id]}
+ renderCart();
+};
+function showProduct(id){
+ const p=menuItems.find(x=>x.id===id);if(!p)return;
+ $('#modalImage').src=p.photo;$('#modalImage').alt=p.name;$('#modalName').textContent=p.name;$('#modalEnglish').textContent=p.en;$('#modalDescription').textContent=p.desc;
+ $('#modalVariant').innerHTML=p.variants.map((v,i)=>`<option value="${i}">${v}</option>`).join('');
+ $('#productModal').dataset.product=id;$('#productModal').classList.add('open');
+}
+function closeProduct(){$('#productModal').classList.remove('open')}
+$('#modalClose').onclick=closeProduct;$('#modalCancel').onclick=closeProduct;
+$('#modalAdd').onclick=()=>{
+ const p=menuItems.find(x=>x.id===$('#productModal').dataset.product);if(!p)return;
+ const custom=[$('#modalMilk').value,$('#modalTemp').value,$('#modalSyrup').value].join('، ');
+ addItem(p,p.variants[Number($('#modalVariant').value)],custom);closeProduct();
+};
+$('#checkout').onclick=()=>{
+ if(!Object.keys(cart).length){Swal.fire({icon:'info',title:'سبد خالی است',text:'ابتدا محصولی انتخاب کنید.',background:'#171914',color:'#f5f0e7',confirmButtonColor:'#c99b52'});return}
+ $('#checkoutModal').classList.add('open');$('#checkoutSummary').textContent='تعداد انتخاب‌ها: '+faNum(Object.values(cart).reduce((n,x)=>n+x.qty,0))+' — قیمت‌ها و مبلغ قابل پرداخت پس از اعلام منوی رسمی مشخص می‌شوند.';
+};
+$('#checkoutClose').onclick=()=>$('#checkoutModal').classList.remove('open');
+$('#orderMethod').onchange=e=>$('#addressField').style.display=e.target.value==='delivery'?'grid':'none';
+$('#checkoutForm').onsubmit=e=>{
+ e.preventDefault();if(!e.target.reportValidity())return;
+ Swal.fire({icon:'info',title:'پیش‌نمایش تکمیل شد',text:'اطلاعات فقط در همین مرورگر پردازش شد؛ سفارش واقعی، پرداخت یا ارسال به کافه انجام نشده است.',background:'#171914',color:'#f5f0e7',confirmButtonColor:'#c99b52'});
+ $('#checkoutModal').classList.remove('open');
+};
+renderCart();
+/* Reservation is a front-end demo; never report a real booking. */
+const dateInput=$('#date'),now=new Date();dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+$('#bookingForm').onsubmit=e=>{
+ e.preventDefault();if(!e.target.reportValidity())return;
+ Swal.fire({icon:'success',title:'درخواست نمایشی آماده شد',text:'این فرم به سامانه رزرو کافه متصل نیست و هیچ میزی رزرو نشده است.',background:'#171914',color:'#f5f0e7',confirmButtonColor:'#c99b52'});e.target.reset();dateInput.min=new Date().toISOString().slice(0,10);
+};
+/* Lightweight Persian/English UI toggle; menu item names remain bilingual. */
+let english=false;
+const translations={
+ '#story .eyebrow':'Our coffee philosophy','#story h2':'For those who take taste seriously.','#story p':'From bean selection to the final sip, every detail matters. Professional baristas and a focus on coffee quality create a calm, intimate experience.',
+ '#menu .eyebrow':'RASTGOO MENU','#menu h2':'Choose your moment.','#menu .head p':'Choose a size or espresso shot. Prices and calories will be published after café approval.',
+ '#experience .eyebrow':'WHY RASTGOO?','#experience h2':'Details you can feel.','#booking .eyebrow':'YOUR TABLE AWAITS','#booking h2':'Reserve a lovely pause.','#contact .eyebrow':'FIND US','#contact h2':'One cup away from meeting.'
+};
+const originalTexts=new Map();
+$('#langSwitch').onclick=()=>{
+ english=!english;document.documentElement.lang=english?'en':'fa';document.documentElement.dir=english?'ltr':'rtl';$('#langSwitch').textContent=english?'FA':'EN';
+ const navFa=['داستان ما','منو','تجربه راستگو','رزرو میز','تماس و مسیر'],navEn=['Our Story','Menu','The Experience','Reserve','Contact'];
+ [...$('#links').children].forEach((a,i)=>a.textContent=english?navEn[i]:navFa[i]);
+ $('#openCart').childNodes[0].textContent=english?'Cart ':'سبد سفارش ';
+ $('#hamb').setAttribute('aria-label',english?'Open menu':'باز کردن منو');
+ Object.entries(translations).forEach(([sel,en])=>{const el=$(sel);if(!el)return;if(!originalTexts.has(sel))originalTexts.set(sel,el.innerHTML);el.innerHTML=english?en:originalTexts.get(sel)});
+ $('.hero-copy .eyebrow').textContent=english?'COFFEE · CRAFT · PAUSE':'قهوه، هنر، مکث';
+ $('.hero-copy h1').innerHTML=english?'Every cup,<span>a different experience.</span>':'هر فنجان،<span>یک جهان تازه.</span>';
+ $('.hero-copy p').textContent=english?'Honest coffee, thoughtful craft and a moment beyond the ordinary café.':'در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.';
+ document.body.classList.toggle('english-ui',english);
+};
+function initCoffeeScene(){
+ const canvas=$('#coffee-scene');if(!canvas||!window.THREE||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ let renderer,scene,camera,cup,beans=[],steam=[],raf=0;
+ try{
+ scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);camera.position.set(0,0,8);
+ renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);
+ renderer.outputColorSpace=THREE.SRGBColorSpace;
+ scene.add(new THREE.AmbientLight(0xffdfb0,1.5));
+ const key=new THREE.PointLight(0xffbd68,3,20);key.position.set(-3,3,5);scene.add(key);
+ const rim=new THREE.PointLight(0xffffff,1.3,15);rim.position.set(3,-1,3);scene.add(rim);
+ const group=new THREE.Group();scene.add(group);cup=group;
+ const ceramic=new THREE.MeshPhysicalMaterial({color:0x211b16,metalness:.22,roughness:.19,clearcoat:.9});
+ const gold=new THREE.MeshStandardMaterial({color:0xd6a75c,metalness:.8,roughness:.24});
+ const body=new THREE.Mesh(new THREE.CylinderGeometry(.92,1.08,1.55,64,1,true),ceramic);group.add(body);
+ const bottom=new THREE.Mesh(new THREE.CylinderGeometry(1.07,1.07,.12,64),ceramic);bottom.position.y=-.77;group.add(bottom);
+ const coffee=new THREE.Mesh(new THREE.CylinderGeometry(.87,.87,.055,64),new THREE.MeshStandardMaterial({color:0x3a180b,roughness:.2}));coffee.position.y=.77;group.add(coffee);
+ const rimMesh=new THREE.Mesh(new THREE.TorusGeometry(.91,.075,16,80),gold);rimMesh.rotation.x=Math.PI/2;rimMesh.position.y=.79;group.add(rimMesh);
+ const handle=new THREE.Mesh(new THREE.TorusGeometry(.48,.12,18,48,Math.PI*1.55),ceramic);handle.position.set(1.05,.05,0);handle.rotation.z=-Math.PI/2;group.add(handle);
+ const saucer=new THREE.Mesh(new THREE.CylinderGeometry(1.45,1.5,.1,64),new THREE.MeshPhysicalMaterial({color:0x17130f,metalness:.3,roughness:.2}));saucer.position.y=-.9;group.add(saucer);
+ group.rotation.z=-.12;group.position.set(-2.05,-.1,0);group.scale.setScalar(.9);
+ const beanGeo=new THREE.SphereGeometry(.12,18,12),beanMat=new THREE.MeshStandardMaterial({color:0x4a2412,roughness:.7});
+ for(let i=0;i<18;i++){const b=new THREE.Mesh(beanGeo,beanMat);b.scale.set(1,.62,.7);b.position.set((Math.random()-.5)*5,(Math.random()-.5)*3.5,(Math.random()-.5)*1.5);b.userData.phase=Math.random()*6.28;scene.add(b);beans.push(b)}
+ const smokeMat=new THREE.MeshBasicMaterial({color:0xd8c5a7,transparent:true,opacity:.13});
+ for(let i=0;i<7;i++){const s=new THREE.Mesh(new THREE.SphereGeometry(.09+i*.008,12,10),smokeMat.clone());s.position.set(-2.05+(Math.random()-.5)*.25,1.0+i*.2,0);s.userData.phase=i*.8;scene.add(s);steam.push(s)}
+ let mx=0,my=0;addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)},{passive:true});
+ const clock=new THREE.Clock();
+ function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false)}
+ addEventListener('resize',resize);
+ function animate(){raf=requestAnimationFrame(animate);if(document.hidden)return;const t=clock.getElapsedTime();group.rotation.y=Math.sin(t*.35)*.12+mx*.12;group.rotation.x=Math.cos(t*.3)*.035+my*.04;group.position.y=-.1+Math.sin(t*.7)*.08;
+ beans.forEach(b=>{b.position.y+=Math.sin(t+b.userData.phase)*.0018;b.rotation.x=t*.12+b.userData.phase;b.rotation.y=t*.18});
+ steam.forEach(s=>{s.position.y=1+t*.18+s.userData.phase*.13;s.position.x=-2.05+Math.sin(t*.8+s.userData.phase)*.1;s.material.opacity=.12*(.5+.5*Math.sin(t+s.userData.phase));if(s.position.y>2.7)s.position.y=1});
+ renderer.render(scene,camera)}
+ animate();
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else animate()});
+ if(window.gsap){gsap.from(group.scale,{x:.65,y:.65,z:.65,duration:1.5,ease:'back.out(1.5)'});}
+ }catch(err){console.warn('3D scene unavailable; cinematic image fallback remains active.',err);if(renderer)renderer.dispose()}
+}
+initCoffeeScene();
+if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy .eyebrow',{opacity:0,y:18,duration:.7,delay:.15});gsap.from('.hero-copy h1',{opacity:0,y:30,duration:1,delay:.3});}
 </script></body></html>
