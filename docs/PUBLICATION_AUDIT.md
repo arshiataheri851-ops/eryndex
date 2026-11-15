@@ -1,6 +1,6 @@
 # ERYNDEX — Public Consistency Audit
 
-**Audit date:** 2026-11-14  
+**Audit date:** 2026-11-16  
 **Scope:** GitHub repository content, English and Persian homepages, service pages, leadership profile routes, five detailed case-study pages, sitemap, contact-form code and deployment documentation, plus the linked source READMEs for FarsiPulse, AtlasRAG and RelayForge.
 
 ## Executive result
@@ -28,11 +28,17 @@ The public company description is consistent at the brand level: ERYNDEX is pres
 
 ### Portfolio inventory
 
-The English and Persian homepages each list 16 projects. Three have dedicated product-site links and source repositories: FarsiPulse, AtlasRAG and RelayForge. The remaining entries link to source implementations; RoutePilot and SignalDesk also have detailed case-study pages.
+The English and Persian homepages each list 18 projects. Three have dedicated product-site links and source repositories: FarsiPulse, AtlasRAG and RelayForge. Two further entries are independent hospitality website concept demos: Yar Mansion Cafe and Café Bernstein. The remaining entries link to source implementations; RoutePilot and SignalDesk also have detailed case-study pages.
 
 The existence of a public URL does not prove current uptime, production readiness or customer use. Product-site uptime was not independently verified in this audit.
 
-### Technical claim boundaries
+### Hospitality concept boundaries
+
+- **Yar Mansion Cafe:** independent Persian-first website concept based on public information; not an official client commission.
+- **Café Bernstein:** independent Modern Classic concept based on the café's public website and menu; not commissioned or endorsed by the café. Stock photography is illustrative, not venue/product photography. The favourites panel is client-side only; ordering, payment and reservations are not integrated.
+- Menu prices and opening hours are time-sensitive and must be reconfirmed before any customer-facing publication.
+
+## Technical claim boundaries
 
 - **FarsiPulse:** the source README documents a typed FastAPI service for binary Persian review sentiment, single and batch prediction, Persian normalization, lazy pinned Hugging Face model loading and reproducible evaluation. Published benchmark results are in-domain only and are not a general performance guarantee.
 - **AtlasRAG:** the source README documents authenticated multi-tenant document retrieval backed by PostgreSQL full-text search. The current retrieval is lexical; it does not use vector embeddings or claim semantic/hybrid retrieval. The service does not claim LLM-generated answers.
