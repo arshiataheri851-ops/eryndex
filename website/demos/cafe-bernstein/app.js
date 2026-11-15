@@ -256,7 +256,7 @@
       items.replaceChildren();
       if (!saved.length) {
         const empty = document.createElement("p");
-        empty.textContent = "Save a few things you would love to try.";
+        empty.textContent = "موارد دلخواهت را به این فهرست اضافه کن.";
         empty.style.cssText = "font-size:11px;color:#817365";
         items.append(empty);
         return;
@@ -268,8 +268,8 @@
         label.textContent = name;
         const remove = document.createElement("button");
         remove.type = "button";
-        remove.textContent = "Remove";
-        remove.setAttribute("aria-label", "Remove " + name);
+        remove.textContent = "حذف";
+        remove.setAttribute("aria-label", "حذف " + name);
         remove.addEventListener("click", () => {
           saved.splice(index, 1);
           render();
