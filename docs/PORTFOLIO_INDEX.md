@@ -22,10 +22,12 @@ This index mirrors the projects currently listed on the public ERYNDEX website. 
 | 14 | RoutePilot — Fleet & Delivery Operations | Fleet and delivery workflow MVP with FastAPI, SQLite, status tracking, proof-of-delivery metadata, and simulated vehicle positions. [Source](https://github.com/arshiataheri851-ops/arshiataheri851-ops/tree/main/projects/routepilot) | MVP / demonstrator |
 | 15 | SignalDesk — Service Operations Intelligence | Service-desk MVP for ticket creation, assignment, priority and SLA-risk filters, status changes, and audit history. [Source](https://github.com/arshiataheri851-ops/arshiataheri851-ops/tree/main/projects/signaldesk) | MVP / demonstrator |
 | 16 | ERYNDEX — Bilingual Company Website | Responsive English/Persian B2B company website with service pages, project case studies, and a contact interface. [Source](https://github.com/arshiataheri851-ops/arshiataheri851-ops/tree/main/projects/eryndex-company-website) | Company website |
+| 17 | [Yar Mansion Cafe — Website Concept](https://eryndex.pages.dev/demos/yar-mansion/) | Independent Persian-first hospitality concept with responsive layout, gallery, menu handoff, contact and directions. Built from public information; not an official client commission. [Source](https://github.com/arshiataheri851-ops/eryndex/tree/main/website/demos/yar-mansion) | Concept demo / not client work |
+| 18 | [Café Bernstein — Website Concept](https://eryndex.pages.dev/demos/cafe-bernstein/) | Independent Modern Classic café concept with an animated Three.js coffee scene, menu filters, favourites panel and visit details. Menu data is based on public listings; images are illustrative. Not an official client commission. [Source](https://github.com/arshiataheri851-ops/eryndex/tree/main/website/demos/cafe-bernstein) | Concept demo / not client work |
 
 ## Live-site note
 
-The company homepage currently identifies FarsiPulse, AtlasRAG, and RelayForge as the three projects with dedicated public product websites. Availability can change; verify each site before describing it as operational.
+The company homepage identifies FarsiPulse, AtlasRAG, and RelayForge as the three projects with dedicated public product websites. The portfolio also includes two independent hospitality concept demos: Yar Mansion Cafe and Café Bernstein. Neither is an official customer commission. Availability can change; verify each product site before describing it as operational.
 
 ## Portfolio maintenance checklist
 
