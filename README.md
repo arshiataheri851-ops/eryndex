@@ -12,7 +12,7 @@ This repository is the central home for ERYNDEX's company website, public compan
 |---|---|
 | `website/` | Current bilingual company website (English and Persian), service pages, work/case-study pages, profile pages, shared assets, and demo pages |
 | `website/contact-api/` | Cloudflare Worker source and deployment notes for the inquiry form |
-| `website/demos/yar-mansion/` | Yar Mansion demonstration website |
+| `website/demos/` | Independent hospitality website concept demos (Yar Mansion Cafe and Café Bernstein) |
 | `docs/COMPANY_PROFILE.md` | Approved company positioning, services, leadership responsibilities, and delivery process |
 | `docs/PORTFOLIO_INDEX.md` | Portfolio inventory with source links and status/claim boundaries |
 | `docs/PUBLICATION_AUDIT.md` | Content consistency audit and remaining launch checks |
