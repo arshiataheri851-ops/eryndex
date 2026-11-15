@@ -16,10 +16,11 @@ Responsive bilingual (English/Persian) company website and engineering portfolio
 - `profile/` and `fa/profile/` — concise bilingual leadership profiles
 - `services/` — four service detail pages
 - `work/` — five detailed engineering case studies
+- `demos/` — independent hospitality website concepts, including Yar Mansion Cafe and Café Bernstein
 - `assets/` — shared styles, scripts, and contact configuration
 - `contact-api/` — Cloudflare Worker source for inquiry delivery
 - `COMPANY_PROFILE.md` — canonical company profile
-- `PORTFOLIO_INDEX.md` — 16-project inventory and status notes
+- `PORTFOLIO_INDEX.md` — 18-project inventory and status notes
 - `PUBLICATION_AUDIT.md` — current cross-site consistency review
 
 ## Cloudflare Pages deployment
@@ -57,7 +58,7 @@ Cloudflare Pages can apply response headers using `_headers`. The current policy
 
 ## Portfolio accuracy
 
-The homepage lists 16 projects. FarsiPulse, AtlasRAG and RelayForge have dedicated product-site links; current uptime was not independently confirmed during the latest content audit. The other entries link to source repositories and are labelled as demonstrators, concepts or MVPs where appropriate.
+The English and Persian homepages list 18 projects. FarsiPulse, AtlasRAG and RelayForge have dedicated product-site links. Yar Mansion Cafe and Café Bernstein are independent hospitality concept demos, not official client commissions. Current product-site uptime must be checked before making operational claims.
 
 Important technical boundaries:
 - AtlasRAG currently uses PostgreSQL lexical full-text search; its source README explicitly says it does not yet use vector embeddings or semantic retrieval, and it does not claim LLM-generated answers.
