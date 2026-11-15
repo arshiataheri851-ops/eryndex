@@ -115,11 +115,61 @@ section{padding:62px 0}.head{margin-bottom:24px}.head h2{font-size:clamp(27px,8v
 @media(hover:none){.btn:hover{transform:none;box-shadow:none}.dish:hover{border-color:#ffffff14}}
 
 </style>
+<style id="rastgoo-cinematic-redesign">
+:root{--bg:#090705;--panel:#17100c;--gold:#b9955d;--pale:#ead9bb;--text:#f4eee4;--muted:#b0a397;--line:#b9955d35}
+body{background:#090705;color:var(--text)}
+.hero{min-height:820px;height:100svh;max-height:1020px;background:radial-gradient(ellipse at 28% 47%,#a86a302b 0,transparent 33%),radial-gradient(ellipse at 8% 80%,#5c301a30 0,transparent 38%),linear-gradient(110deg,#0a0705 0%,#100b08 48%,#090705 100%);isolation:isolate}
+.hero:before{background:radial-gradient(ellipse at 25% 50%,#b7803b20,transparent 42%),linear-gradient(90deg,#08060405 0%,#08060438 48%,#080604 100%);z-index:-2}
+.hero:after{inset:18px;border:1px solid #c5a16b26;pointer-events:none;z-index:1;background:linear-gradient(90deg,transparent 0%,#08060408 40%,#08060435 100%)}
+#coffee-scene{z-index:0;opacity:1;filter:drop-shadow(0 35px 45px #0009)}
+.hero .wrap{z-index:3;width:min(1240px,calc(100% - 64px))}
+.hero-copy{max-width:590px;margin-right:0;margin-left:auto;padding-top:42px;position:relative}
+.hero-copy:before{content:"";position:absolute;right:-34px;top:48px;width:2px;height:118px;background:linear-gradient(var(--gold),transparent)}
+.hero-copy .eyebrow{font-size:11px;letter-spacing:3px;color:#d5b783}
+.hero h1{font-size:clamp(58px,7.4vw,100px);line-height:1.18;letter-spacing:-2px;margin:28px 0 24px;text-shadow:0 12px 45px #0009}
+.hero h1 span{color:var(--pale);font-family:Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-3px}
+.hero-copy>p{font-size:15px;line-height:2.35;color:#c6b9a9;max-width:470px}
+.hero-cta{margin-top:35px;gap:14px}.hero-cta .btn{min-height:52px;padding:14px 25px}
+.btn{background:linear-gradient(125deg,#e8d2a8,#b18a52);border-color:#d4b47e;box-shadow:0 10px 35px #b58a4a1c}
+.btn.ghost{border-color:#c1a06a66;background:#100b08a6;color:#ead9bb}
+.stats{border-top:1px solid #d7b77b30;max-width:520px;margin-top:62px;padding-top:24px;gap:44px}
+.stats strong{font-family:Georgia,serif;font-size:25px;font-weight:400;letter-spacing:1px}.stats small{font-size:10px;letter-spacing:.4px}
+.hero-frame{position:absolute;z-index:2;left:5.2%;top:18%;width:34%;height:64%;border:1px solid #c6a16b32;pointer-events:none}
+.hero-frame:before,.hero-frame:after{content:"";position:absolute;background:#c6a16b}
+.hero-frame:before{width:52px;height:1px;top:-1px;left:-1px}.hero-frame:after{width:1px;height:52px;top:-1px;left:-1px}
+.hero-side-note{position:absolute;z-index:3;left:3%;bottom:12%;writing-mode:vertical-rl;transform:rotate(180deg);font:10px Georgia,serif;letter-spacing:4px;color:#c5a16b88}
+.hero-index{position:absolute;z-index:3;left:6%;top:13%;font:10px Georgia,serif;letter-spacing:3px;color:#d1b17b99;direction:ltr}
+#story{padding-top:145px;padding-bottom:145px}.story{gap:90px}
+.story-img{height:570px;isolation:isolate}.story-img:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#090705a8);z-index:1;pointer-events:none}
+.story-img img{filter:sepia(.15) saturate(.72) contrast(1.08);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.story-img:hover img{transform:scale(1.045)}.story-img:after{inset:20px -20px -20px 20px;border-color:#b9955d66}
+.menu-area{background:linear-gradient(180deg,#0c0806 0%,#17100b 15%,#17100b 85%,#0c0806 100%);border-top:1px solid #b9955d18;border-bottom:1px solid #b9955d18}
+.menu-area:before{content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;background-image:radial-gradient(#c5a16b .55px,transparent .55px);background-size:22px 22px;mask-image:linear-gradient(90deg,transparent,#000,transparent)}
+.dish{background:linear-gradient(145deg,#241810,#100b08);border-color:#c4a06b25;box-shadow:0 18px 45px #0002}
+.dish:hover{transform:translateY(-7px);box-shadow:0 25px 55px #0006;border-color:#c5a16b77}
+.dish .photo{overflow:hidden}.dish .photo img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
+.dish:hover .photo img{transform:scale(1.07);filter:saturate(.95)}
+.feature,.review-card,.loyalty-card,.referral-card,.tracking-card,.contact{background:linear-gradient(145deg,#211710,#100c09);border-color:#b9955d30}
+.feature{transition:transform .35s,border-color .35s}.feature:hover{transform:translateY(-5px);border-color:#b9955d80}
+.booking{background:radial-gradient(ellipse at 5% 10%,#9b693022,transparent 45%),linear-gradient(120deg,#21160f,#0d0907);border-color:#b9955d44}
+footer{background:#070504}.badge{background:#100b08ee;border-color:#b9955d66;color:#ead9bb}
+@media(max-width:850px){.hero-frame{left:2%;width:43%;height:55%;top:23%}.hero-side-note{left:2%}.hero-index{left:4%}}
+@media(max-width:680px){
+.hero{min-height:820px;height:auto;padding:112px 0 55px}.hero:after{inset:7px}.hero .wrap{width:calc(100% - 34px)}
+.hero-copy{margin:0 auto;padding-top:0;max-width:100%}.hero-copy:before{right:-9px;top:12px;height:80px}
+.hero h1{font-size:clamp(43px,12vw,58px);letter-spacing:-1px;margin:18px 0}.hero h1 span{letter-spacing:-1.5px}
+.hero-copy>p{font-size:13px;max-width:100%;line-height:2.15}.hero-cta{margin-top:22px}
+.stats{margin-top:35px;gap:18px;justify-content:space-between}.stats strong{font-size:20px}
+.hero-frame{left:5%;top:auto;bottom:7%;width:60%;height:28%;opacity:.55}.hero-side-note{display:none}.hero-index{top:90px;left:7%;font-size:8px}
+#coffee-scene{opacity:.42}#story{padding-top:85px;padding-bottom:85px}.story{gap:44px}.story-img{height:330px;margin:0 8px 0 0}
+}
+@media(prefers-reduced-motion:reduce){.dish,.feature,.story-img img{transition:none!important}}
+</style>
 </head>
 <body>
 <header id="top"><div class="wrap nav"><a class="brand" href="#home"><div class="brandmark"><span>ر</span></div><div><b>کافه راستگو</b><small>RASTGOO COFFEE HOUSE</small></div></a><nav class="links" id="links"><a href="#story">داستان ما</a><a href="#menu">منو</a><a href="#experience">تجربه راستگو</a><a href="#booking">رزرو میز</a><a href="#contact">تماس و مسیر</a></nav><div class="actions"><button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button><button class="cart-open" id="openCart">سبد سفارش <span class="count" id="count">۰</span></button><a class="btn" href="#booking">رزرو میز</a><button class="hamb" id="hamb">☰</button></div></div></header>
 <main>
-<section class="hero" id="home"><canvas id="coffee-scene" aria-hidden="true"></canvas><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
+<section class="hero" id="home"><canvas id="coffee-scene" aria-hidden="true"></canvas><div class="hero-frame" aria-hidden="true"></div><div class="hero-index" aria-hidden="true">R / 01 — COFFEE CULTURE</div><div class="hero-side-note" aria-hidden="true">CRAFTED MOMENTS · TEHRAN</div><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
 <section id="story"><div class="wrap story"><div class="story-img" data-aos="fade-left"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1000&q=85" alt="آماده‌سازی قهوه"></div><div data-aos="fade-right"><span class="eyebrow">نگاه راستگو به قهوه</span><h2>برای آن‌هایی که<br><span class="gold">طعم را جدی می‌گیرند.</span></h2><p>از انتخاب دانه تا آخرین قطره در فنجان، جزئیات اهمیت دارند. باریستاهای حرفه‌ای و توجه به کیفیت قهوه، تجربه‌ای می‌سازند که در کنار فضایی تاریک، آرام و صمیمی، برای گفت‌وگوهای طولانی و لحظه‌های شخصی ایده‌آل است.</p><div class="pillars"><div class="ico">✦</div><div><b>قهوه با دقت و شخصیت</b><small>تمرکز بر کیفیت، عصاره‌گیری و تعادل طعم</small></div></div><div class="pillars"><div class="ico">◈</div><div><b>فضایی برای مکث</b><small>محیطی دنج با حریم مناسب گفت‌وگو</small></div></div></div></div></section>
 <section class="menu-area" id="menu"><div class="wrap">
 <div class="head"><div><span class="eyebrow">منوی کافه راستگو</span><h2>لحظه‌ات را <span class="gold">انتخاب کن.</span></h2></div>
@@ -355,40 +405,49 @@ $('#langSwitch').onclick=()=>{
 };
 function initCoffeeScene(){
  const canvas=$('#coffee-scene');if(!canvas||!window.THREE||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- let renderer,scene,camera,cup,beans=[],steam=[],raf=0;
+ let renderer,scene,camera,group,beans=[],steam=[],raf=0;
  try{
- scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);camera.position.set(0,0,8);
- renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);
- renderer.outputColorSpace=THREE.SRGBColorSpace;
- scene.add(new THREE.AmbientLight(0xffdfb0,1.5));
- const key=new THREE.PointLight(0xffbd68,3,20);key.position.set(-3,3,5);scene.add(key);
- const rim=new THREE.PointLight(0xffffff,1.3,15);rim.position.set(3,-1,3);scene.add(rim);
- const group=new THREE.Group();scene.add(group);cup=group;
- const ceramic=new THREE.MeshPhysicalMaterial({color:0x211b16,metalness:.22,roughness:.19,clearcoat:.9});
- const gold=new THREE.MeshStandardMaterial({color:0xd6a75c,metalness:.8,roughness:.24});
- const body=new THREE.Mesh(new THREE.CylinderGeometry(.92,1.08,1.55,64,1,true),ceramic);group.add(body);
- const bottom=new THREE.Mesh(new THREE.CylinderGeometry(1.07,1.07,.12,64),ceramic);bottom.position.y=-.77;group.add(bottom);
- const coffee=new THREE.Mesh(new THREE.CylinderGeometry(.87,.87,.055,64),new THREE.MeshStandardMaterial({color:0x3a180b,roughness:.2}));coffee.position.y=.77;group.add(coffee);
- const rimMesh=new THREE.Mesh(new THREE.TorusGeometry(.91,.075,16,80),gold);rimMesh.rotation.x=Math.PI/2;rimMesh.position.y=.79;group.add(rimMesh);
- const handle=new THREE.Mesh(new THREE.TorusGeometry(.48,.12,18,48,Math.PI*1.55),ceramic);handle.position.set(1.05,.05,0);handle.rotation.z=-Math.PI/2;group.add(handle);
- const saucer=new THREE.Mesh(new THREE.CylinderGeometry(1.45,1.5,.1,64),new THREE.MeshPhysicalMaterial({color:0x17130f,metalness:.3,roughness:.2}));saucer.position.y=-.9;group.add(saucer);
- group.rotation.z=-.12;group.position.set(-2.05,-.1,0);group.scale.setScalar(.9);
- const beanGeo=new THREE.SphereGeometry(.12,18,12),beanMat=new THREE.MeshStandardMaterial({color:0x4a2412,roughness:.7});
- for(let i=0;i<18;i++){const b=new THREE.Mesh(beanGeo,beanMat);b.scale.set(1,.62,.7);b.position.set((Math.random()-.5)*5,(Math.random()-.5)*3.5,(Math.random()-.5)*1.5);b.userData.phase=Math.random()*6.28;scene.add(b);beans.push(b)}
- const smokeMat=new THREE.MeshBasicMaterial({color:0xd8c5a7,transparent:true,opacity:.13});
- for(let i=0;i<7;i++){const s=new THREE.Mesh(new THREE.SphereGeometry(.09+i*.008,12,10),smokeMat.clone());s.position.set(-2.05+(Math.random()-.5)*.25,1.0+i*.2,0);s.userData.phase=i*.8;scene.add(s);steam.push(s)}
- let mx=0,my=0;addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)},{passive:true});
+ scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(34,1,.1,100);camera.position.set(0,0,8.7);
+ renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
+ renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);renderer.outputColorSpace=THREE.SRGBColorSpace;
+ scene.add(new THREE.AmbientLight(0xffe4c1,1.25));
+ const key=new THREE.PointLight(0xffc477,4.1,22);key.position.set(-3.5,3.8,5);scene.add(key);
+ const fill=new THREE.PointLight(0x8b4c27,2.1,18);fill.position.set(3,-2,4);scene.add(fill);
+ const rimLight=new THREE.SpotLight(0xffe0ae,3.4,20,Math.PI/5,.55,1.2);rimLight.position.set(-1,5,4);scene.add(rimLight);
+ group=new THREE.Group();scene.add(group);
+ const ceramic=new THREE.MeshPhysicalMaterial({color:0x241a14,metalness:.18,roughness:.17,clearcoat:1,clearcoatRoughness:.08});
+ const gold=new THREE.MeshStandardMaterial({color:0xc49a5c,metalness:.82,roughness:.2});
+ const coffeeMat=new THREE.MeshPhysicalMaterial({color:0x3a180b,roughness:.18,clearcoat:.7});
+ const body=new THREE.Mesh(new THREE.CylinderGeometry(.91,1.06,1.5,72,1,true),ceramic);group.add(body);
+ const base=new THREE.Mesh(new THREE.CylinderGeometry(1.06,1.06,.13,72),ceramic);base.position.y=-.75;group.add(base);
+ const espresso=new THREE.Mesh(new THREE.CylinderGeometry(.865,.865,.045,72),coffeeMat);espresso.position.y=.755;group.add(espresso);
+ const crema=new THREE.Mesh(new THREE.TorusGeometry(.48,.018,8,90),new THREE.MeshStandardMaterial({color:0xb77a37,roughness:.3}));crema.rotation.x=Math.PI/2;crema.position.y=.78;group.add(crema);
+ const rim=new THREE.Mesh(new THREE.TorusGeometry(.91,.055,16,90),gold);rim.rotation.x=Math.PI/2;rim.position.y=.765;group.add(rim);
+ const handle=new THREE.Mesh(new THREE.TorusGeometry(.46,.115,20,60,Math.PI*1.65),ceramic);handle.position.set(1.02,.04,0);handle.rotation.z=-Math.PI/2;group.add(handle);
+ const saucer=new THREE.Mesh(new THREE.CylinderGeometry(1.43,1.53,.11,72),new THREE.MeshPhysicalMaterial({color:0x17110d,metalness:.34,roughness:.2,clearcoat:.8}));saucer.position.y=-.88;group.add(saucer);
+ const saucerLine=new THREE.Mesh(new THREE.TorusGeometry(1.34,.018,8,100),gold);saucerLine.rotation.x=Math.PI/2;saucerLine.position.y=-.81;group.add(saucerLine);
+ const emblem=new THREE.Mesh(new THREE.TorusGeometry(.19,.012,8,48),gold);emblem.position.set(0,-.03,.925);group.add(emblem);
+ const dot=new THREE.Mesh(new THREE.SphereGeometry(.035,12,10),gold);dot.position.set(0,-.03,.94);group.add(dot);
+ group.rotation.z=-.12;
+ const beanGeo=new THREE.SphereGeometry(.105,20,14),beanMat=new THREE.MeshStandardMaterial({color:0x512b17,roughness:.52});
+ for(let i=0;i<24;i++){const b=new THREE.Mesh(beanGeo,beanMat);b.scale.set(1,.62,.72);b.position.set((Math.random()-.5)*5.8,(Math.random()-.5)*4.2,(Math.random()-.5)*2);b.userData={phase:Math.random()*Math.PI*2,baseY:b.position.y,speed:.22+Math.random()*.28};scene.add(b);beans.push(b)}
+ const steamMat=new THREE.MeshBasicMaterial({color:0xe9d8bd,transparent:true,opacity:.15,depthWrite:false});
+ for(let i=0;i<9;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.07+i*.006,12,10),steamMat.clone());p.position.set(0,1.02+i*.12,.1);p.userData={phase:i*.72};group.add(p);steam.push(p)}
+ let mx=0,my=0,scroll=0;
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+ addEventListener('scroll',()=>{scroll=Math.min(1,Math.max(0,scrollY/Math.max(1,innerHeight)))},{passive:true});
+ function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.position.z=w<680?10.8:8.7;camera.updateProjectionMatrix();renderer.setSize(w,h,false);if(w<680){group.position.set(0,-1.8,0);group.scale.setScalar(.57)}else{group.position.set(-2.05,-.12,0);group.scale.setScalar(.92)}}
+ addEventListener('resize',resize);resize();
  const clock=new THREE.Clock();
- function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false)}
- addEventListener('resize',resize);
- function animate(){raf=requestAnimationFrame(animate);if(document.hidden)return;const t=clock.getElapsedTime();group.rotation.y=Math.sin(t*.35)*.12+mx*.12;group.rotation.x=Math.cos(t*.3)*.035+my*.04;group.position.y=-.1+Math.sin(t*.7)*.08;
- beans.forEach(b=>{b.position.y+=Math.sin(t+b.userData.phase)*.0018;b.rotation.x=t*.12+b.userData.phase;b.rotation.y=t*.18});
- steam.forEach(s=>{s.position.y=1+t*.18+s.userData.phase*.13;s.position.x=-2.05+Math.sin(t*.8+s.userData.phase)*.1;s.material.opacity=.12*(.5+.5*Math.sin(t+s.userData.phase));if(s.position.y>2.7)s.position.y=1});
+ function animate(){raf=requestAnimationFrame(animate);if(document.hidden)return;const t=clock.getElapsedTime();
+ group.rotation.y=Math.sin(t*.28)*.11+mx*.13;group.rotation.x=Math.cos(t*.24)*.035+my*.035;group.rotation.z=-.12+Math.sin(t*.22)*.018+scroll*.055;
+ group.position.y=(innerWidth<680?-1.8:-.12)+Math.sin(t*.62)*.075-scroll*.12;
+ beans.forEach(b=>{b.position.y=b.userData.baseY+Math.sin(t*b.userData.speed+b.userData.phase)*.19;b.rotation.x=t*.13+b.userData.phase;b.rotation.y=t*.19});
+ steam.forEach(p=>{const phase=(t*.34+p.userData.phase)%3;p.position.y=1.02+phase*.5;p.position.x=Math.sin(t*.75+p.userData.phase)*(.08+phase*.045);p.material.opacity=.12*(1-phase/3)});
  renderer.render(scene,camera)}
- animate();
- document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else animate()});
- if(window.gsap){gsap.from(group.scale,{x:.65,y:.65,z:.65,duration:1.5,ease:'back.out(1.5)'});}
- }catch(err){console.warn('3D scene unavailable; cinematic image fallback remains active.',err);if(renderer)renderer.dispose()}
+ animate();document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else animate()});
+ if(window.gsap)gsap.from(group.scale,{x:.72,y:.72,z:.72,duration:1.7,ease:'power3.out'});
+ }catch(err){console.warn('3D scene unavailable; cinematic background remains active.',err);if(renderer)renderer.dispose()}
 }
 initCoffeeScene();
 if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy .eyebrow',{opacity:0,y:18,duration:.7,delay:.15});gsap.from('.hero-copy h1',{opacity:0,y:30,duration:1,delay:.3});}
