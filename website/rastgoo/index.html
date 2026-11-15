@@ -43,6 +43,22 @@ footer{padding:40px 0 24px;border-top:1px solid var(--line);background:#070807}.
 <div class="shade" id="shade"></div><aside class="drawer" id="drawer"><div class="drawer-head"><h3>سبد سفارش شما</h3><button class="close" id="close">×</button></div><div class="items" id="items"><div class="empty">سبد شما هنوز خالی است.<br><span class="gold">از منو انتخاب کنید.</span></div></div><div class="drawer-foot"><div class="total"><b>مبلغ کل</b><strong id="total">۰ تومان</strong></div><button class="btn" id="checkout">ادامه و ثبت سفارش</button><small style="display:block;text-align:center;color:var(--muted);margin-top:9px;font-size:10px">پرداخت آنلاین در این نسخه فعال نیست.</small></div></aside>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 <script>
+/* Reliable menu-image fallback: inline SVG remains visible if remote photos fail. */
+(function(){
+  const art={espresso:['ESPRESSO','☕','#b98740'],latte:['LATTE ART','☕','#c69b69'],cappuccino:['CAPPUCCINO','☕','#d7ad68'],iced:['ICED COFFEE','🧊','#8aa6a0'],americano:['AMERICANO','◉','#b98740'],cake:['CHOCOLATE CAKE','🍰','#a66a54']};
+  function fallback(kind){
+    const a=art[kind]||art.espresso;
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#28271f"/><stop offset="1" stop-color="#090b09"/></linearGradient><radialGradient id="r"><stop stop-color="'+a[2]+'" stop-opacity=".45"/><stop offset="1" stop-color="#090b09" stop-opacity="0"/></radialGradient></defs><rect width="800" height="500" fill="url(#g)"/><circle cx="400" cy="230" r="260" fill="url(#r)"/><path d="M0 390 Q180 350 340 390 T800 380 V500 H0Z" fill="#080907" opacity=".65"/><circle cx="400" cy="225" r="120" fill="#11140f" stroke="'+a[2]+'" stroke-width="3"/><text x="400" y="270" text-anchor="middle" font-size="115">'+a[1]+'</text><path d="M280 345 H520" stroke="'+a[2]+'" stroke-width="2" opacity=".7"/><text x="400" y="395" text-anchor="middle" fill="#f1d7a5" font-family="Arial,sans-serif" font-size="25" letter-spacing="7">'+a[0]+'</text><text x="400" y="430" text-anchor="middle" fill="#b8aa91" font-family="Arial,sans-serif" font-size="13" letter-spacing="4">RASTGOO COFFEE HOUSE</text></svg>';
+    return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+  }
+  const map={'اسپرسو دبل':'espresso','لاته':'latte','کاپوچینو':'cappuccino','آیس لاته':'iced','آیس آمریکانو':'americano','کیک شکلاتی':'cake'};
+  document.querySelectorAll('#grid .photo img').forEach(img=>{
+    const name=img.closest('.dish')?.querySelector('.add')?.dataset.name;
+    img.dataset.fallbackKind=map[name]||'espresso';
+    img.addEventListener('error',function(){if(this.dataset.fallbackApplied)return;this.dataset.fallbackApplied='1';this.src=fallback(this.dataset.fallbackKind);});
+    if(img.complete&&img.naturalWidth===0)img.dispatchEvent(new Event('error'));
+  });
+})();
 AOS.init({duration:850,once:true,offset:70});VanillaTilt.init([...document.querySelectorAll('[data-tilt]')],{max:8,speed:500,glare:true,'max-glare':.18});
 addEventListener('scroll',()=>document.querySelector('#top').classList.toggle('scrolled',scrollY>25));
 document.querySelector('#hamb').onclick=()=>document.querySelector('#links').classList.toggle('show');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.querySelector('#links').classList.remove('show'));
