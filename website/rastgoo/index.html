@@ -267,6 +267,7 @@ function renderTracking(secondsLeft){
  $('#trackingMessage').textContent=secondsLeft>0?'پیش‌نمایش مسیر آماده‌سازی سفارش شما؛ زمان واقعی به شلوغی کافه بستگی دارد.':'در این شبیه‌سازی، سفارش آماده تحویل نمایش داده می‌شود.';
 }
 function startDemoOrder(){
+ if(purchaseStamps<10){purchaseStamps++;writeStore('rastgoo-demo-stamps',purchaseStamps);renderStamps()}
  const order={startedAt:Date.now(),endsAt:Date.now()+180000,mode:'simulation'};
  writeStore('rastgoo-demo-order',order);
  $('#checkoutSummary').textContent='سفارش آزمایشی ثبت شد؛ شمارش معکوس ۳ دقیقه‌ای آغاز می‌شود.';
