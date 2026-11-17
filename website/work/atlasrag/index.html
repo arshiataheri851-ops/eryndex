@@ -1,1 +1,78 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AtlasRAG — tenant-isolated document retrieval API demonstrator by ERYNDEX."><title>AtlasRAG — ERYNDEX</title><link rel="stylesheet" href="../../assets/style.css"></head><body><header class="header"><a class="logo" href="../../">ERYNDEX<span class="logo-period">.</span></a><nav class="subpage-nav"><a href="../../#services">Services</a><a href="../../#work">Work</a><a href="../../fa/">فارسی</a><a class="nav-cta" href="../../#contact">Let's talk ↗</a></nav></header><main class="section-wrap"><div class="section-label">ENGINEERING CASE STUDY · PORTFOLIO DEMONSTRATOR</div><h1 style="font-size:clamp(42px,7vw,76px)">AtlasRAG</h1><p class="hero-lead">An authenticated multi-tenant document retrieval API with PostgreSQL full-text search, tenant-scoped document operations and source citations.</p><div class="resume-columns"><div><h2>Implemented capabilities</h2><ul><li>Tenant-scoped document ingestion, batch ingestion, listing, deletion and retrieval</li><li>API-key authentication with fail-closed configuration</li><li>PostgreSQL 16 full-text search with a GIN index</li><li>Persian text normalization, including Yeh/Kaf and ZWNJ handling</li><li>Source-oriented citations and retrieval evaluation endpoints</li><li>Privacy-conscious audit events and protected Prometheus metrics</li></ul><h2>Architecture</h2><p>FastAPI service → tenant API-key resolution → PostgreSQL document and chunk storage → lexical full-text retrieval → source references and extractive response.</p></div><div><h2>Search boundaries</h2><p>The current search engine is lexical PostgreSQL full-text search. It does not use vector embeddings and does not claim semantic or hybrid retrieval. The API provides extractive, source-oriented results; it does not claim LLM-generated answers.</p><p>Tenant isolation and authentication are implemented in the repository, but production readiness still depends on configured secrets, HTTPS, rate limits, monitoring, backup/restore drills and operational review. No customer deployment or SLA is claimed.</p><h2>Source & run instructions</h2><p>Review the source README and production runbook for configuration, local PostgreSQL setup, evaluation and operational constraints.</p><p><a class="btn btn-primary" href="https://github.com/arshiataheri851-ops/arshiataheri851-ops/tree/main/projects/production-rag-service" target="_blank" rel="noopener noreferrer">View source repository ↗</a></p><p><a class="text-link" href="https://atlasrag-6eab.onrender.com" target="_blank" rel="noopener noreferrer">Open product website ↗</a></p></div></div><p class="fine-print"><a href="../../">← Back to ERYNDEX</a></p></main><footer><span>ERYNDEX · Engineering demonstrators</span><span>© 2026 ERYNDEX</span></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Try AtlasRAG, ERYNDEX's evidence-first document retrieval demo. Search sample English and Persian documents and inspect source citations.">
+<meta name="theme-color" content="#090d18">
+<title>AtlasRAG — Interactive Knowledge Retrieval | ERYNDEX</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body data-api-base="">
+<header class="header">
+  <a class="logo" href="../../"><span class="logo-symbol"><i></i><i></i><i></i></span><span>ERYNDEX<span class="logo-period">.</span></span></a>
+  <nav class="subpage-nav"><a href="../../#services">Services</a><a href="../../#work">Work</a><a href="../../fa/">فارسی</a><a class="nav-cta" href="../../#contact">Let's talk ↗</a></nav>
+</header>
+<main>
+<section class="atlas-hero">
+  <div class="atlas-kicker"><span class="status-dot"></span> ERYNDEX ENGINEERING DEMO <span class="kicker-divider">/</span> KNOWLEDGE RETRIEVAL</div>
+  <div class="atlas-hero-grid">
+    <div><h1>Find the answer.<br><em>See the evidence.</em></h1>
+      <p class="atlas-lead">A live, read-only document retrieval experience. Ask a question across a curated sample knowledge base and inspect exactly which source passages support the result.</p>
+      <div class="atlas-actions"><a class="btn btn-primary" href="#live-demo">Try the live demo <span>↓</span></a><a class="text-link" href="https://github.com/arshiataheri851-ops/arshiataheri851-ops/tree/main/projects/production-rag-service" target="_blank" rel="noopener noreferrer">Explore source code ↗</a></div>
+    </div>
+    <div class="atlas-orbit" aria-hidden="true"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orbit-ring ring-three"></div><div class="orbit-core"><span>AR</span><small>RETRIEVE</small></div><i class="orbit-node node-one"></i><i class="orbit-node node-two"></i><i class="orbit-node node-three"></i></div>
+  </div>
+  <div class="atlas-proof"><div><b>05</b><span>Sample documents</span></div><div><b>EN + FA</b><span>Language coverage</span></div><div><b>01</b><span>Evidence per result</span></div><div><b>READ ONLY</b><span>Isolated demo corpus</span></div></div>
+</section>
+
+<section class="atlas-section" id="live-demo">
+  <div class="atlas-section-head"><div><div class="section-label">01 / INTERACTIVE EXPERIENCE</div><h2>Ask your knowledge base.</h2></div><p>Try one of the suggested questions or write your own. The demo searches a fixed sample corpus and returns source-backed excerpts.</p></div>
+  <div class="demo-shell">
+    <div class="demo-toolbar"><div class="demo-brand"><span class="demo-mark">A</span><div><b>AtlasRAG Console</b><small>PUBLIC SANDBOX · READ ONLY</small></div></div><div class="api-state" id="apiState"><i></i><span>Connecting to API…</span></div></div>
+    <div class="demo-body">
+      <aside class="corpus-panel"><div class="panel-label">AVAILABLE KNOWLEDGE</div><div class="corpus-count"><b id="documentCount">—</b><span>indexed sample documents</span></div><div id="documentList" class="document-list"><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-line"></div></div><div class="corpus-note"><span>i</span><p>Sample content only. Your questions are not added to the index or retained as documents.</p></div></aside>
+      <div class="query-panel">
+        <div class="query-intro"><div class="panel-label">ASK A QUESTION</div><p>What would you like to find?</p></div>
+        <div class="suggestions">
+          <button type="button" data-question="How many days can employees work remotely?">Remote work policy <span>↗</span></button>
+          <button type="button" data-question="When should security incidents be reported?">Security incident reporting <span>↗</span></button>
+          <button type="button" data-question="What is required before a production deployment?">Production deployment rules <span>↗</span></button>
+          <button type="button" data-question="کارکنان چند روز در هفته می‌توانند دورکاری کنند؟">قوانین دورکاری <span>↗</span></button>
+        </div>
+        <form id="queryForm" class="query-form">
+          <label for="questionInput">YOUR QUESTION</label>
+          <div class="query-input-wrap"><textarea id="questionInput" rows="2" maxlength="1000" placeholder="Ask about policies, security, onboarding…" required></textarea><button id="askButton" type="submit" aria-label="Search documents"><span>SEARCH</span><b>↗</b></button></div>
+          <div class="query-hint"><span>⌘ / Ctrl + Enter to search</span><span id="characterCount">0 / 1000</span></div>
+        </form>
+        <div id="queryStatus" class="query-status" role="status" aria-live="polite">Choose a suggested question or ask your own.</div>
+        <section id="answerPanel" class="answer-panel" hidden>
+          <div class="answer-top"><div><span class="panel-label">RETRIEVED ANSWER</span><span class="grounded-pill" id="groundedPill">GROUNDED</span></div><span class="method-label" id="methodLabel">BM25 RETRIEVAL</span></div>
+          <p id="answerText" class="answer-text"></p>
+          <div class="citation-heading"><span class="panel-label">SOURCE EVIDENCE</span><span id="citationCount">0 SOURCES</span></div>
+          <div id="citationList" class="citation-list"></div>
+        </section>
+      </div>
+    </div>
+    <div class="demo-footer"><span>Public demo API · rate limited · no document writes</span><span>AtlasRAG / ERYNDEX</span></div>
+  </div>
+  <p class="demo-disclaimer">This showcase uses a small, curated demonstration corpus. Retrieval scores are ranking signals, not confidence probabilities. Results are not a substitute for reviewing the source documents.</p>
+</section>
+
+<section class="atlas-section architecture-section">
+  <div class="atlas-section-head"><div><div class="section-label">02 / HOW IT WORKS</div><h2>Evidence before answers.</h2></div><p>Designed around traceable retrieval and explicit system boundaries, rather than opaque generated responses.</p></div>
+  <div class="architecture-flow"><div class="flow-step"><span>01</span><b>Question</b><small>Validated request</small></div><i>→</i><div class="flow-step"><span>02</span><b>Normalize</b><small>Persian / Arabic text</small></div><i>→</i><div class="flow-step"><span>03</span><b>Retrieve</b><small>Lexical full-text search</small></div><i>→</i><div class="flow-step"><span>04</span><b>Evidence</b><small>Ranked source chunks</small></div></div>
+  <div class="architecture-notes"><article><span>01 / SECURITY</span><h3>Tenant boundaries</h3><p>The underlying API scopes protected document operations to the tenant identified by its API key.</p></article><article><span>02 / TRACEABILITY</span><h3>Source citations</h3><p>Responses include the document title, source reference, retrieved passage and ranking score.</p></article><article><span>03 / OPERATIONS</span><h3>Built to be inspected</h3><p>FastAPI contracts, PostgreSQL full-text indexing, automated tests and Docker-based local setup.</p></article></div>
+</section>
+
+<section class="atlas-section boundaries-section">
+  <div class="section-label">03 / TECHNICAL TRANSPARENCY</div><div class="boundaries-grid"><div><h2>Clear about<br><em>what it is.</em></h2><p>AtlasRAG is an evidence-retrieval foundation. The current implementation uses PostgreSQL lexical full-text search and extractive answer selection.</p></div><div class="boundary-list"><div><b>Implemented</b><span>PostgreSQL FTS · GIN index · tenant-scoped APIs · API-key auth · citations · retrieval evaluation</span></div><div><b>Not claimed</b><span>Vector embeddings · semantic or hybrid search · LLM-generated answers · customer production deployment</span></div><div><b>Demo safety</b><span>Curated read-only sample data · no public document uploads · request rate limit</span></div></div></div>
+</section>
+
+<section class="atlas-cta"><div class="section-label">04 / BUILD WITH ERYNDEX</div><h2>Bring your knowledge<br>closer to your team.</h2><p>Discuss a private, tenant-isolated retrieval solution for your documents and workflows.</p><a class="btn btn-primary" href="../../#contact">Discuss your project <span>↗</span></a></section>
+</main>
+<footer><span>ERYNDEX · Engineering demonstrators</span><span><a href="../../">Back to ERYNDEX ↗</a></span><span>© 2026 ERYNDEX</span></footer>
+<script src="demo.js" defer></script>
+</body>
+</html>
