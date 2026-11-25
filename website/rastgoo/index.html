@@ -48,7 +48,6 @@ footer{padding:40px 0 24px;border-top:1px solid var(--line);background:#070807}.
 @media(max-width:720px){.review-grid,.loyalty-wrap{grid-template-columns:1fr}.track-steps{grid-template-columns:1fr 1fr}.nutrition-grid{grid-template-columns:1fr 1fr}}
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <style>
 /* ERYNDEX premium interaction layer */
@@ -256,11 +255,75 @@ footer .credit{border-color:#ddd!important;color:#666!important}
 .qr-disclaimer{max-width:500px}
 @media(max-width:700px){.qr-layout{grid-template-columns:1fr}.qr-card{flex-direction:column;text-align:center}.qr-copy{text-align:center}.qr-disclaimer{margin-inline:auto}}
 </style>
+
+<style id="rastgoo-monochrome-final">
+:root{--bg:#fff;--panel:#f3f3f3;--gold:#222;--pale:#111;--text:#171717;--muted:#666;--line:#17171720;color-scheme:light}
+html,body{background:#fff!important;color:#171717!important}
+body{background:#fff!important}
+header,header.scrolled{background:#fffffff2!important;border-bottom:1px solid #17171718!important}
+.links{color:#333!important}
+.links a:hover,.brand small,.eyebrow,.gold{color:#222!important}
+.eyebrow:before{background:#555!important}
+.brandmark{border-color:#222!important;color:#111!important}
+.btn,.filter.active,.filter:hover{background:#171717!important;color:#fff!important;border-color:#171717!important}
+.btn:hover{box-shadow:0 10px 26px #0002!important}
+.btn.ghost{background:transparent!important;color:#171717!important;border-color:#555!important}
+.cart-open,.lang-switch,.detail-btn{background:#fff!important;color:#171717!important;border:1px solid #bbb!important}
+.count{background:#171717!important;color:#fff!important}
+.hamb{color:#171717!important}
+.hero{background:#f1f1f1!important}
+.hero:before{filter:grayscale(1)!important;opacity:.18!important}
+.hero:after{background:linear-gradient(90deg,#ffffffb8,#fffffff0 66%,#fff)!important}
+.hero h1,.hero h1 span{color:#111!important}
+.hero p,.stats small{color:#555!important}
+.stats{border-color:#0002!important}.stats strong{color:#111!important}
+.hero-frame,.hero-index,.hero-side-note{color:#333!important;border-color:#777!important}
+section{background-color:transparent}
+.story-img:after{border-color:#777!important}
+.menu-area{background:linear-gradient(180deg,transparent,#f5f5f5 12%,#f5f5f5 88%,transparent)!important}
+.filter{border-color:#bbb!important;color:#333!important;background:#fff!important}
+.dish,.feature,.rating,.quote,.review-card,.loyalty-card,.referral-card,.tracking-card,.booking,.contact,.nutrition-panel,.nutrition-cell{background:#fff!important;border:1px solid #ddd!important;color:#171717!important;box-shadow:0 8px 28px #00000008}
+.dish:hover{border-color:#777!important}
+.dish p,.feature p,.quote p,.review-card p,.story p,.booking p,.contact-row span,.contact-row a{color:#666!important}
+.dish .english,.variant-control label,.field label,.modal-options label,.checkout-form label{color:#555!important}
+.price,.variant-meta strong,.nutrition-panel h4,.nutrition-cell strong,.rating-number,.reviewer,.pillars small,.pillars b{color:#171717!important}
+.variant-control select,.field input,.field select,.field textarea,.modal-options select,.checkout-form input,.checkout-form textarea,.checkout-form select,.inline-form input{background:#fff!important;color:#171717!important;border:1px solid #bbb!important}
+.field select option{background:#fff!important;color:#171717!important}
+.add{background:#fff!important;color:#171717!important;border-color:#555!important}
+.add:hover{background:#171717!important;color:#fff!important}
+.tag{background:#171717e8!important;color:#fff!important;border-color:#777!important}
+.notice,.nutrition-note{color:#666!important}
+.ico{color:#171717!important;border-color:#bbb!important}
+.stamp{border-color:#aaa!important;color:#777!important}.stamp.done{background:#eee!important;border-color:#333!important;color:#111!important}
+.track-step{color:#666!important;border-color:#ddd!important}.track-step.done{border-color:#333!important;color:#171717!important}
+.countdown{color:#171717!important}
+.coupon-status{color:#333!important}
+.map{filter:grayscale(1)!important}
+.contact{background:#f8f8f8!important}
+.hours{border-color:#ddd!important;color:#666!important}
+footer{background:#f4f4f4!important;border-color:#ddd!important}
+.credit{color:#555!important;border-color:#ddd!important}
+.badge{background:#fff!important;color:#222!important;border-color:#bbb!important}
+.drawer{background:#fff!important;border-color:#ddd!important;color:#171717!important}
+.drawer-head,.drawer-foot,.cart-item{border-color:#ddd!important}
+.close{color:#171717!important}
+.items .empty{color:#666!important}
+.qty button{background:#f3f3f3!important;color:#171717!important;border-color:#ccc!important}
+.shade{background:#0008!important}
+.product-modal,.checkout-modal{background:#0008!important}
+.modal-card{background:#fff!important;border-color:#ddd!important}
+.modal-content p,.cart-summary-note{color:#666!important}
+.modal-close{color:#171717!important}
+.demo{color:#333!important;border-color:#bbb!important}
+@media(max-width:850px){.links{background:#fff!important;border-color:#ddd!important}}
+@media(prefers-reduced-motion:reduce){#coffee-scene{display:none!important}}
+</style>
+
 </head>
 <body>
 <header id="top"><div class="wrap nav"><a class="brand" href="#home"><div class="brandmark"><span>ر</span></div><div><b>کافه راستگو</b><small>RASTGOO COFFEE HOUSE</small></div></a><nav class="links" id="links"><a href="#story">داستان ما</a><a href="#menu">منو</a><a href="#experience">تجربه راستگو</a><a href="#table-menu">منوی QR</a><a href="#booking">رزرو میز</a><a href="#contact">تماس و مسیر</a></nav><div class="actions"><button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button><button class="cart-open" id="openCart">سبد سفارش <span class="count" id="count">۰</span></button><a class="btn" href="#booking">رزرو میز</a><button class="hamb" id="hamb">☰</button></div></div></header>
 <main>
-<section class="hero" id="home"><canvas id="coffee-scene" aria-hidden="true"></canvas><div class="hero-frame" aria-hidden="true"></div><div class="hero-index" aria-hidden="true">R / 01 — COFFEE CULTURE</div><div class="hero-side-note" aria-hidden="true">CRAFTED MOMENTS · TEHRAN</div><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
+<section class="hero" id="home"><div class="hero-frame" aria-hidden="true"></div><div class="hero-index" aria-hidden="true">R / 01 — COFFEE CULTURE</div><div class="hero-side-note" aria-hidden="true">CRAFTED MOMENTS · TEHRAN</div><div class="wrap"><div class="hero-copy" data-aos="fade-up"><span class="eyebrow">قهوه، هنر، مکث</span><h1>هر فنجان،<span>یک جهان تازه.</span></h1><p>در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.</p><div class="hero-cta"><a class="btn" href="#menu">کشف منو ↙</a><a class="btn ghost" href="#booking">رزرو تجربه شما</a></div><div class="stats"><div><strong>Specialty</strong><small>نگاه تخصصی به قهوه</small></div><div><strong>11–23</strong><small>هر روز کنار شما</small></div><div><strong>Tehran</strong><small>قلب شهر</small></div></div></div></div></section>
 <section id="story"><div class="wrap story"><div class="story-img" data-aos="fade-left"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1000&q=85" alt="آماده‌سازی قهوه"></div><div data-aos="fade-right"><span class="eyebrow">نگاه راستگو به قهوه</span><h2>برای آن‌هایی که<br><span class="gold">طعم را جدی می‌گیرند.</span></h2><p>از انتخاب دانه تا آخرین قطره در فنجان، جزئیات اهمیت دارند. باریستاهای حرفه‌ای و توجه به کیفیت قهوه، تجربه‌ای می‌سازند که در کنار فضایی تاریک، آرام و صمیمی، برای گفت‌وگوهای طولانی و لحظه‌های شخصی ایده‌آل است.</p><div class="pillars"><div class="ico">✦</div><div><b>قهوه با دقت و شخصیت</b><small>تمرکز بر کیفیت، عصاره‌گیری و تعادل طعم</small></div></div><div class="pillars"><div class="ico">◈</div><div><b>فضایی برای مکث</b><small>محیطی دنج با حریم مناسب گفت‌وگو</small></div></div></div></div></section>
 <section class="menu-area" id="menu"><div class="wrap">
 <div class="head"><div><span class="eyebrow">منوی کافه راستگو</span><h2>لحظه‌ات را <span class="gold">انتخاب کن.</span></h2></div>
@@ -516,52 +579,7 @@ $('#langSwitch').onclick=()=>{
  $('.hero-copy p').textContent=english?'Honest coffee, thoughtful craft and a moment beyond the ordinary café.':'در کافه راستگو، قهوه فقط یک نوشیدنی نیست؛ بهانه‌ای‌ست برای مکث، گفت‌وگو و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارند.';
  document.body.classList.toggle('english-ui',english);
 };
-function initCoffeeScene(){
- const canvas=$('#coffee-scene');if(!canvas||!window.THREE||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- let renderer,scene,camera,group,beans=[],steam=[],raf=0;
- try{
- scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(34,1,.1,100);camera.position.set(0,0,8.7);
- renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
- renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);renderer.outputColorSpace=THREE.SRGBColorSpace;
- scene.add(new THREE.AmbientLight(0xffe4c1,1.25));
- const key=new THREE.PointLight(0xffc477,4.1,22);key.position.set(-3.5,3.8,5);scene.add(key);
- const fill=new THREE.PointLight(0x8b4c27,2.1,18);fill.position.set(3,-2,4);scene.add(fill);
- const rimLight=new THREE.SpotLight(0xffe0ae,3.4,20,Math.PI/5,.55,1.2);rimLight.position.set(-1,5,4);scene.add(rimLight);
- group=new THREE.Group();scene.add(group);
- const ceramic=new THREE.MeshPhysicalMaterial({color:0x241a14,metalness:.18,roughness:.17,clearcoat:1,clearcoatRoughness:.08});
- const gold=new THREE.MeshStandardMaterial({color:0xc49a5c,metalness:.82,roughness:.2});
- const coffeeMat=new THREE.MeshPhysicalMaterial({color:0x3a180b,roughness:.18,clearcoat:.7});
- const body=new THREE.Mesh(new THREE.CylinderGeometry(.91,1.06,1.5,72,1,true),ceramic);group.add(body);
- const base=new THREE.Mesh(new THREE.CylinderGeometry(1.06,1.06,.13,72),ceramic);base.position.y=-.75;group.add(base);
- const espresso=new THREE.Mesh(new THREE.CylinderGeometry(.865,.865,.045,72),coffeeMat);espresso.position.y=.755;group.add(espresso);
- const crema=new THREE.Mesh(new THREE.TorusGeometry(.48,.018,8,90),new THREE.MeshStandardMaterial({color:0xb77a37,roughness:.3}));crema.rotation.x=Math.PI/2;crema.position.y=.78;group.add(crema);
- const rim=new THREE.Mesh(new THREE.TorusGeometry(.91,.055,16,90),gold);rim.rotation.x=Math.PI/2;rim.position.y=.765;group.add(rim);
- const handle=new THREE.Mesh(new THREE.TorusGeometry(.46,.115,20,60,Math.PI*1.65),ceramic);handle.position.set(1.02,.04,0);handle.rotation.z=-Math.PI/2;group.add(handle);
- const saucer=new THREE.Mesh(new THREE.CylinderGeometry(1.43,1.53,.11,72),new THREE.MeshPhysicalMaterial({color:0x17110d,metalness:.34,roughness:.2,clearcoat:.8}));saucer.position.y=-.88;group.add(saucer);
- const saucerLine=new THREE.Mesh(new THREE.TorusGeometry(1.34,.018,8,100),gold);saucerLine.rotation.x=Math.PI/2;saucerLine.position.y=-.81;group.add(saucerLine);
- const emblem=new THREE.Mesh(new THREE.TorusGeometry(.19,.012,8,48),gold);emblem.position.set(0,-.03,.925);group.add(emblem);
- const dot=new THREE.Mesh(new THREE.SphereGeometry(.035,12,10),gold);dot.position.set(0,-.03,.94);group.add(dot);
- group.rotation.z=-.12;
- const beanGeo=new THREE.SphereGeometry(.105,20,14),beanMat=new THREE.MeshStandardMaterial({color:0x512b17,roughness:.52});
- for(let i=0;i<24;i++){const b=new THREE.Mesh(beanGeo,beanMat);b.scale.set(1,.62,.72);b.position.set((Math.random()-.5)*5.8,(Math.random()-.5)*4.2,(Math.random()-.5)*2);b.userData={phase:Math.random()*Math.PI*2,baseY:b.position.y,speed:.22+Math.random()*.28};scene.add(b);beans.push(b)}
- const steamMat=new THREE.MeshBasicMaterial({color:0xe9d8bd,transparent:true,opacity:.15,depthWrite:false});
- for(let i=0;i<9;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.07+i*.006,12,10),steamMat.clone());p.position.set(0,1.02+i*.12,.1);p.userData={phase:i*.72};group.add(p);steam.push(p)}
- let mx=0,my=0,scroll=0;
- addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
- addEventListener('scroll',()=>{scroll=Math.min(1,Math.max(0,scrollY/Math.max(1,innerHeight)))},{passive:true});
- function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.position.z=w<680?10.8:8.7;camera.updateProjectionMatrix();renderer.setSize(w,h,false);if(w<680){group.position.set(0,-1.8,0);group.scale.setScalar(.57)}else{group.position.set(-2.05,-.12,0);group.scale.setScalar(.92)}}
- addEventListener('resize',resize);resize();
- const clock=new THREE.Clock();
- function animate(){raf=requestAnimationFrame(animate);if(document.hidden)return;const t=clock.getElapsedTime();
- group.rotation.y=Math.sin(t*.28)*.11+mx*.13;group.rotation.x=Math.cos(t*.24)*.035+my*.035;group.rotation.z=-.12+Math.sin(t*.22)*.018+scroll*.055;
- group.position.y=(innerWidth<680?-1.8:-.12)+Math.sin(t*.62)*.075-scroll*.12;
- beans.forEach(b=>{b.position.y=b.userData.baseY+Math.sin(t*b.userData.speed+b.userData.phase)*.19;b.rotation.x=t*.13+b.userData.phase;b.rotation.y=t*.19});
- steam.forEach(p=>{const phase=(t*.34+p.userData.phase)%3;p.position.y=1.02+phase*.5;p.position.x=Math.sin(t*.75+p.userData.phase)*(.08+phase*.045);p.material.opacity=.12*(1-phase/3)});
- renderer.render(scene,camera)}
- animate();document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else animate()});
- if(window.gsap)gsap.from(group.scale,{x:.72,y:.72,z:.72,duration:1.7,ease:'power3.out'});
- }catch(err){console.warn('3D scene unavailable; cinematic background remains active.',err);if(renderer)renderer.dispose()}
-}
-initCoffeeScene();
+/* Removed the animated 3D coffee cup and floating beans as requested. */
+
 if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy .eyebrow',{opacity:0,y:18,duration:.7,delay:.15});gsap.from('.hero-copy h1',{opacity:0,y:30,duration:1,delay:.3});}
 </script></body></html>
