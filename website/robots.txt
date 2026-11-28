@@ -1,4 +1,7 @@
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
 
-Sitemap: https://eryndex.pages.dev/sitemap.xml
+Sitemap: https://eryndex.net/sitemap.xml
